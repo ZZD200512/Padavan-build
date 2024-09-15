@@ -71,6 +71,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD_SYSLOG/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FTPD/d' .config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_QOS/d' .config
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
         ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
@@ -95,6 +96,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD_SYSLOG=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_FTPD=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SFTP=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> .config
         else
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
@@ -124,6 +126,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD_SYSLOG=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_FTPD=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SFTP=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_QOS=y" >> .config
         fi
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
